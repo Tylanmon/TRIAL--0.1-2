@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html{
+text-align: center;
+font-family: Helvetica, Arial, sans-serif;
+position: absolute;
+left: 50%;
+top: 50%;
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+background-color: bisque;
+font-size: 20px;
+}
+
+body {
+    cursor: pointer;
+    width: 380px;
+    height: 600px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 255, .2);
+    transition: all .2s;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+   }
+
+   button {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #1f78ff;
+    color: white;
+    font-weight: bolder;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    box-shadow: 0px 14px 56px -11px #1875FF;
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 5cm;
+    transition: all 0.4s;
+    cursor: pointer;
+   }
+
+   button:hover {
+       background-color: #1c66d4;
+   }
+   
+   a { 
+    text-decoration: none; 
+    color: rgb(0, 0, 0); 
+   }
+    </style>
+</head>
+<body>
+        <a href="https://jsfiddle.net/Tylanmon/y2vfx3jp/3/" title="Click here for the code."><h1>Heads or Tails</h1></a>
+        <button id="HEADB">Heads</button>
+        <button id="TAILSB">Tails</button>
+        <div id="results"></div>
+        <script>
+            document.getElementById('TAILSB').addEventListener('click', function(){
+    HOT = Math.floor((Math.random()) * (100 - 1+1) + 1)
+    if (HOT >= 50){
+        HEADIMG = document.createElement('img')
+        HEADIMG.src = 'https://i.imgur.com/gXOplzY.png'
+        document.body.appendChild(HEADIMG)
+        HEADIMG.style.height = '250px'
+        HEADIMG.style.position = 'absolute'
+        HEADIMG.style.top = '160px'
+        HEADIMG.style.right = '1.9cm'
+
+    }else{
+        HEADIMGS = document.createElement('img')
+        HEADIMGS.src = 'https://i.imgur.com/UcHeTL1.png'
+        document.body.appendChild(HEADIMGS)
+        HEADIMGS.style.height = '250px'
+        HEADIMGS.style.position = 'absolute'
+        HEADIMGS.style.top = '160px'
+        HEADIMGS.style.right = '1.9cm'
+    }
+
+    if (HOT >= 50) {
+
+
+       HEAD = document.createElement('h1')
+       HEADC = document.createTextNode('Heads')
+       HEAD.appendChild(HEADC)
+       head = document.getElementById('results')
+       document.body.insertBefore(HEAD, head)
+       HEAD.style.marginBottom = '7cm'
+       HEAD.style.color = 'red'
+
+
+    }else{
+     TAILS = document.createElement('h1')
+     TAILSC = document.createTextNode('Tails')
+     TAILS.appendChild(TAILSC)
+     tails = document.getElementById('results')
+     document.body.insertBefore(TAILS, tails)
+     TAILS.style.marginBottom = '7cm'
+     TAILS.style.color = '#5DBB63'
+    }
+
+    if(HOT <= 50){
+            WINH = document.createElement('H2')
+            WINC = document.createTextNode(`You've won!`)
+            WINH.appendChild(WINC)
+            winh = document.getElementById('results')
+            document.body.insertBefore(WINH,winh)
+         }else{
+          LOSTH = document.createElement('H2')
+          LOSTHC = document.createTextNode(`You've lost.`)
+          LOSTH.appendChild(LOSTHC)
+          losth = document.getElementById('results')
+          document.body.insertBefore(LOSTH,losth)
+
+    }
+
+    document.getElementById('TAILSB').remove()
+    document.getElementById('HEADB').remove()
+
+    TRYH = document.createElement('button')
+    TRYH.innerHTML = 'Try again?'
+    document.body.appendChild(TRYH)
+
+    TRYH.setAttribute('id', 'TRYM')
+
+    document.getElementById('TRYM').addEventListener('click',function() {
+        location.reload()
+    })  
+})
+
+document.getElementById('HEADB').addEventListener('click', function(){
+    HOT = Math.floor((Math.random()) * (100 - 1+1) + 1)
+
+    if (HOT >= 50){
+        HEADIMG = document.createElement('img')
+        HEADIMG.src = 'https://i.imgur.com/gXOplzY.png'
+        document.body.appendChild(HEADIMG)
+        HEADIMG.style.height = '250px'
+        HEADIMG.style.position = 'absolute'
+        HEADIMG.style.top = '160px'
+        HEADIMG.style.right = '1.9cm'
+
+    }else{
+        HEADIMGS = document.createElement('img')
+        HEADIMGS.src = 'https://i.imgur.com/UcHeTL1.png'
+        document.body.appendChild(HEADIMGS)
+        HEADIMGS.style.height = '250px'
+        HEADIMGS.style.position = 'absolute'
+        HEADIMGS.style.top = '160px'
+        HEADIMGS.style.right = '1.9cm'
+    }
+ 
+    if (HOT >= 50) {
+       HEAD = document.createElement('h1')
+       HEADC = document.createTextNode('Heads')
+       HEAD.appendChild(HEADC)
+       head = document.getElementById('results')
+       document.body.insertBefore(HEAD, head)
+       HEAD.style.marginBottom = '7cm'
+       HEAD.style.color = '#5DBB63'
+
+    }else{
+     TAILS = document.createElement('h1')
+     TAILSC = document.createTextNode('Tails')
+     TAILS.appendChild(TAILSC)
+     tails = document.getElementById('results')
+     document.body.insertBefore(TAILS, tails)
+     TAILS.style.marginBottom = '7cm'
+     TAILS.style.color = 'red'
+
+    }
+
+    if(HOT >= 50){
+            WINH = document.createElement('h2')
+            WINC = document.createTextNode(`You've won!`)
+            WINH.appendChild(WINC)
+            winh = document.getElementById('results')
+            document.body.insertBefore(WINH,winh)
+         }else{
+          LOSTH = document.createElement('h2')
+          LOSTHC = document.createTextNode(`You've lost.`)
+          LOSTH.appendChild(LOSTHC)
+          losth = document.getElementById('results')
+          document.body.insertBefore(LOSTH,losth)
+
+    }
+    
+    document.getElementById('TAILSB').remove()
+    document.getElementById('HEADB').remove()
+
+    TRYH = document.createElement('button')
+    TRYH.innerHTML = 'Try again?'
+    document.body.appendChild(TRYH)
+
+    TRYH.setAttribute('id', 'TRYM')
+
+    document.getElementById('TRYM').addEventListener('click',function() {
+        location.reload()
+    })  
+})
+
+
+        </script>
+</body>
+</html>
+
