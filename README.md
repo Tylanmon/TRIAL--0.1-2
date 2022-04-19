@@ -1,2 +1,1 @@
-# Heads-or-Tails
-Simple coin fliper
+TRIAL--0.1/2
